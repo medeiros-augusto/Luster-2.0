@@ -21,14 +21,11 @@
                 </div>
                 <div class="desc-user">
                     <div class="nome-user">
-                        <p>Nome User</p>
+                        <p>Faça login na Luster</p>
                     </div>
                     <div class="links-user">
                         <div class="link">
-                            <a href="">Minha Conta  |</a>
-                        </div>
-                        <div class="link">
-                            <a href="">Sair</a>
+                            <p id="login">Entrar</p>
                         </div>
                     </div>
                 </div>
@@ -57,6 +54,7 @@
                 <a href="">MINHA CONTA</a>
             </div>
         </div>
+
     </header>
     <main>
         <div class="banner">
@@ -82,6 +80,24 @@ retirar. Esses produtos serão significativamente mais baratos do que em outras 
 site um destino atraente para usuários que procuram economizar dinheiro em suas compras.
             </p>
         </div>
+        <div class="popup-wrapper">
+          <div class="popup">
+              <div class="popup-close">X</div>
+              <div class="popup-content">
+                  <img src="pages/images/luster.png" alt="logo" width="200px">
+                  <h2>Log In</h2>
+                  <form action="/login" method="post">
+                      <input type="E-mail" name="mail" placeholder="E-mail" class="input-form">
+                      <input type="password" name="senha" placeholder="Senha" class="input-form">
+                      <input type="submit" value="LOGAR" class="but">
+                  </form>
+                  <br>
+                  <hr>
+                  <br>
+                  <a class="popup-link" href="#">Fechar</a>
+              </div>
+          </div>
+      </div>
         <div class="circulo">
             <div></div>
             <div></div>
@@ -212,5 +228,6 @@ site um destino atraente para usuários que procuram economizar dinheiro em suas
           </div>
         </footer>
       </div>
+      <script src="pages/scripts/popup.js"></script>
 </body>
 </html>

@@ -27,10 +27,17 @@
     width: 130px;
     gap: 5%;
 }
-.link a{
-    text-decoration: none;
+.link p{
+    text-decoration: underline;
+    cursor: pointer;
     color: white;
+    margin: 0;
 }
+
+.link p:hover{
+    text-decoration: none;
+}
+
 .nome-user p{
     margin: 0px;
     color: white;
@@ -69,7 +76,6 @@
     justify-content: space-between;
 }
 .sub-cabecalho > div > a{
-    text-decoration: none;
     color: white;
     font-weight: bold;
 }
