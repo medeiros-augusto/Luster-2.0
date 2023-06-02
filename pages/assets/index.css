@@ -88,6 +88,7 @@ main h1 {
 .but {
     background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
     border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
     padding: 10px 25px;
     border: none;
     cursor: pointer;
