@@ -15,5 +15,6 @@ popup.addEventListener('click', event => {
     const closepopup = classnames.some(classname => classname === classnameofclickedelement)
     if (closepopup) {
         popup.style.display = 'none'
+        geral.style.display = 'block'
     }
 })
