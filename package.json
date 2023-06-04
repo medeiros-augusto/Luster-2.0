@@ -14,5 +14,12 @@
     "mysql2": "^3.3.3",
     "path": "^0.12.7"
   },
-  "devDependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medeiros-augusto/Luster-2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/medeiros-augusto/Luster-2.0/issues"
+  },
+  "homepage": "https://github.com/medeiros-augusto/Luster-2.0#readme"
 }

@@ -1,21 +1,25 @@
-.banner{
+.banner {
     display: flex;
     margin-top: 25px;
     justify-content: center;
 }
-.banner img{
+
+.banner img {
     border-radius: 15px;
     width: 90%;
     height: 600px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    ;
 }
-.circulo{
+
+.circulo {
     display: flex;
     justify-content: center;
     gap: 100px;
     margin-bottom: 5%;
     margin-top: 5%;
 }
+
 .circulo div {
     width: 300px;
     height: 300px;
@@ -24,20 +28,30 @@
     display: inline-block;
     margin: 10px;
 }
-main{
+
+main {
     text-align: center;
 }
-main h1{
+
+main h1 {
     font-size: 40px;
 }
-#texto{
+
+#texto {
     margin-left: 12%;
     margin-right: 12%;
     font-size: 24px;
 }
+<<<<<<< HEAD
 .popup-wrapper, .popup-total {
     display: none;
     background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
+=======
+
+.popup-wrapper {
+    display: none;
+    background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000, #ff0000);
+>>>>>>> d8cc385cad3b21e898f5b25065d95e167871f6ca
     position: fixed;
     top: 0;
     left: 0%;
@@ -83,6 +97,7 @@ main h1{
 .but {
     background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
     border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
     padding: 10px 25px;
     border: none;
     cursor: pointer;
