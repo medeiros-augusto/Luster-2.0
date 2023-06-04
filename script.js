@@ -13,7 +13,7 @@ app.use('/pages', express.static('pages'))
 const connection = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
-  password: 'root',
+  password: '',
   database: 'luster',
 });
 

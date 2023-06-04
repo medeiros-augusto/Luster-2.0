@@ -35,9 +35,9 @@ main h1{
     margin-right: 12%;
     font-size: 24px;
 }
-.popup-wrapper {
+.popup-wrapper, .popup-total {
     display: none;
-    background: white;
+    background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
     position: fixed;
     top: 0;
     left: 0%;
@@ -45,7 +45,7 @@ main h1{
     height: 100%;
 }
 
-.popup-wrapper * {
+.popup-wrapper *, .popup-total * {
     color: white;
 }
 
@@ -60,13 +60,16 @@ main h1{
     position: relative;
 }
 
-.popup-link {
+.popup-link, #pop-volta {
     cursor: pointer;
     border-radius: 5px;
     padding: 6px 10px;
+    margin-left: 20%;
     text-decoration: none;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
     color: white;
+    max-width: 50%;
+    font-weight: bold;
     background-color: gray;
 }
 
