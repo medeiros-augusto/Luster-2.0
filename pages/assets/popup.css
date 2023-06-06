@@ -1,0 +1,69 @@
+.popup-wrapper, .popup-total {
+    display: none;
+    background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-wrapper *, .popup-total * {
+    color: white;
+}
+
+.popup {
+    text-align: center;
+    max-width: 200px;
+    margin: 10% auto;
+    padding: 20px;
+    background: rgb(31, 31, 31);
+    border-radius: 15px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.popup-link, #pop-volta {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 6px 10px;
+    margin-left: 20%;
+    text-decoration: none;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    color: white;
+    max-width: 50%;
+    font-weight: bold;
+    background-color: gray;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.but {
+    background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.but:hover {
+    background: white;
+    color: #e60000;
+    transition: 1s;
+}
+
+.input-form {
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px outset #e60000;
+    color: black;
+}

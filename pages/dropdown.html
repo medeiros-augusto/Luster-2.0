@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos</title>
+  <link rel="icon" href="images/dados.png">
+  <link rel="stylesheet" href="assets/dropdown.css">
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/popup.css">
+</head>
+<body>
+  <header>
+    <div class="cabecalho">
+        <div class="logoheader">
+            <img src="images/luster.png" alt="logo">
+        </div>
+        <div class="info-user">
+            <div class="fotoperfil">
+                <img src="images/user.png" alt="fotoperfil">
+            </div>
+            <div class="desc-user">
+                <div class="nome-user">
+                    <p>Faça login na Luster</p>
+                </div>
+                <div class="links-user">
+                    <div class="link">
+                        <p id="login">Entrar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="saldo">
+            <p>SALDO</p>
+        </div>
+        <div class="carrinho">
+            <img src="images/carrinho.png" alt="carrinho">
+        </div>
+    </div>
+    <div class="sub-cabecalho">
+        <div>
+            <a href="">CASSINOS</a>
+        </div>
+        <div>
+            <a href="">PRODUTOS</a>
+        </div>
+        <div>
+            <a href="">HISTÓRICO</a>
+        </div>
+        <div>
+            <a href="">RECARREGAR</a>
+        </div>
+        <div>
+            <a href="">MINHA CONTA</a>
+        </div>
+    </div>
+
+  </header>
+  <div class="dropdown">
+    <span class="dropbtn">Categorias</span>
+    <div class="dropdown-content">
+      <a href="#" onclick="showProducts('smartphones')">Smartphones</a>
+      <a href="#" onclick="showProducts('consoles')">Consoles</a>
+      <a href="#" onclick="showProducts('computadores')">Computadores</a>
+      <a href="#" onclick="showProducts('acessorios')">Acessórios</a>
+    </div>
+  </div>
+
+  <div class="product-container">
+    <div id="category-container"></div>
+    <div id="product-list"></div>
+  </div>
+  <div class="popup-wrapper">
+    <div class="popup">
+        <div class="popup-close">X</div>
+        <div class="popup-content">
+            <img src="images/luster.png" alt="logo" width="200px">
+            <h2>Log In</h2>
+            <form action="/login" method="post">
+                <input type="E-mail" name="mail" placeholder="E-mail" class="input-form">
+                <input type="password" name="senha" placeholder="Senha" class="input-form">
+                <input type="submit" value="LOGAR" class="but">
+            </form>
+            <br>
+            <hr>
+            <br>
+            <p class="popup-link">Sign Up</p>
+        </div>
+    </div>
+</div>
+<div class="popup-total">
+  <div class="popup">
+      <div class="popup-close">X</div>
+      <div class="popup-content">
+          <img src="images/luster.png" alt="logo" width="200px">
+          <h2>Sign Up</h2>
+          <form action="/cadastro" method="post">
+              <input type="text" name="name" placeholder="Nome de usuário" class="input-form">
+              <input type="E-mail" name="mail" placeholder="E-mail" class="input-form">
+              <input type="password" name="senha" placeholder="Senha" class="input-form">
+              <input type="submit" value="CADASTRAR" class="but">
+          </form>
+          <br>
+            <hr>
+            <br>
+            <p id="pop-volta">Log in</p>
+      </div>
+  </div>
+ </div>
+  <script src="scripts/popup.js"></script>
+  <script src="scripts/dropdown.js"></script>
+</body>
+</html>
