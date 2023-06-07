@@ -1,5 +1,5 @@
 var products = [
-    { name: "Gosverni 9 Pro", category: "smartphones", price: 999.99, image: "images/produtos/gosverni.png" },
+    { name: "Gosverni Xernou 9 Pro", category: "smartphones", price: 999.99, image: "images/produtos/gosverni.png" },
     { name: "Iphone 14 PRO MAX", category: "smartphones", price: 799.99, image: "images/produtos/iphone.png" },
     { name: "Samsung Galaxy Z Folder 4", category: "smartphones", price: 1299.99, image: "images/produtos/samsung.png" },
     { name: "Playstation 5", category: "consoles", price: 1999.99, image: "images/produtos/ps51.png" },
@@ -29,7 +29,7 @@ function showProducts(category) {
         productElement.classList.add("product");
 
         var linkElement = document.createElement("a");
-        linkElement.href = "nova_pagina.html";
+        linkElement.href = "gosverni.html";
 
         var imageElement = document.createElement("img");
         imageElement.src = product.image;
@@ -50,4 +50,4 @@ function showProducts(category) {
     });
 }
 
-showProducts("all"); // Exibe todos os produtos inicialmente
+showProducts("all");
