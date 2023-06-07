@@ -7,7 +7,6 @@ h1 {
 }
 
 .dropdown {
-  position: relative;
   display: inline-block;
 }
 
@@ -51,15 +50,6 @@ h1 {
   to { transform: translateY(0); }
 }
 
-.product-container {
-  display: flex;
-}
-
-#category-container {
-  flex-basis: 25%;
-  padding: 20px;
-}
-
 #product-list {
   flex-basis: 75%;
   padding: 20px;
@@ -87,8 +77,7 @@ h1 {
 }
 
 #category-container {
-  flex-basis: 25%;
-  padding: 20px;
+  flex-basis: 20%;
 }
 
 #product-list {

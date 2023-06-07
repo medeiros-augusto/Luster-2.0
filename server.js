@@ -30,14 +30,13 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-    let username = req.body.nome;
+    let username = req.body.mail;
     let password = req.body.senha;
 
     connection.query("SELECT * FROM usuario where email_usuario = '" + username + "'", function(err, rows, fields) {
         console.log("Results:", rows);
         if (!err) {
             if (rows.length > 0) {
-                console.log(rows[0].senha)
 
                 if (rows[0].senha_usuario === password) {
                     res.send('Login com Sucesso!!!');

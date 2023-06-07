@@ -1,13 +1,13 @@
 var products = [
-    { name: "Produto 1", category: "smartphones", price: 999.99, image: "images/gosverni.png" },
-    { name: "Produto 2", category: "smartphones", price: 799.99, image: "product2.jpg" },
-    { name: "Produto 3", category: "smartphones", price: 1299.99, image: "product8.jpg" },
-    { name: "Produto 4", category: "consoles", price: 1999.99, image: "images/produtos/consoles/ps51.png" },
-    { name: "Produto 5", category: "consoles", price: 2999.99, image: "product4.jpg" },
-    { name: "Produto 6", category: "computadores", price: 2999.99, image: "product5.jpg" },
-    { name: "Produto 7", category: "computadores", price: 3999.99, image: "product6.jpg" },
-    { name: "Produto 8", category: "acessorios", price: 49.99, image: "product7.jpg" },
-    { name: "Produto 9", category: "acessorios", price: 29.99, image: "product8.jpg" }
+    { name: "Gosverni 9 Pro", category: "smartphones", price: 999.99, image: "images/produtos/gosverni.png" },
+    { name: "Iphone 14 PRO MAX", category: "smartphones", price: 799.99, image: "images/produtos/iphone.png" },
+    { name: "Samsung Galaxy Z Folder 4", category: "smartphones", price: 1299.99, image: "images/produtos/samsung.png" },
+    { name: "Playstation 5", category: "consoles", price: 1999.99, image: "images/produtos/ps51.png" },
+    { name: "X Box Series X", category: "consoles", price: 2999.99, image: "images/produtos/xbox.png" },
+    { name: "Notebook Alienware", category: "computadores", price: 2999.99, image: "images/produtos/alienware.png" },
+    { name: "PC Gamer", category: "computadores", price: 3999.99, image: "images/produtos/pcgamer.png" },
+    { name: "Headset Astro A50", category: "acessorios", price: 49.99, image: "images/produtos/headset.png" },
+    { name: "Nike Air Max Plus", category: "acessorios", price: 29.99, image: "images/produtos/nike.png" }
 ];
 
 function showProducts(category) {
@@ -29,7 +29,7 @@ function showProducts(category) {
         productElement.classList.add("product");
 
         var linkElement = document.createElement("a");
-        linkElement.href = "nova_pagina.html"; // Substitua "nova_pagina.html" pela URL desejada
+        linkElement.href = "nova_pagina.html";
 
         var imageElement = document.createElement("img");
         imageElement.src = product.image;

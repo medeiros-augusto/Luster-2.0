@@ -86,7 +86,7 @@
     justify-content: space-between;
 }
 
-.sub-cabecalho>div>a {
+.sub-cabecalho>div>a, .sub-cabecalho>div>span {
     color: white;
     font-weight: bold;
 }
@@ -99,4 +99,7 @@
 
 body {
     margin: 0px;
+}
+header{
+    font-family: sans-serif;
 }
