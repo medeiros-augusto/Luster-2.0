@@ -1,66 +1,102 @@
+/* Deixa os blocos na mesma linha */
 .produto {
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-  }
-  
-  .image {
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-  }
-  
-  .image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  .descricao{
-    padding: 20px;
-    width: 30%;
-    margin-top: 1.2%;
-    margin-bottom: 2.8%;
-    border: 1px solid grey;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .legenda {
-    margin-bottom: 10px;
-    color: #888;
-  }
-  
-  .itens {
-    margin-bottom: 10px;
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  .itens li {
-    margin-bottom: 5px;
-  }
-  
-  .preco {
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 5px;
-  }
-  
-  .botcompra {
-    display: block;
-    padding: 10px 20px;
-    background-color: #00ff4c;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 18px;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+/* Bloco esquerdo da foto do produto */
+.image {
+  width: 400px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Bloco direito de informações do produto */
+.descricao {
+  padding: 20px;
+  width: 30%;
+  margin-top: 1.2%;
+  margin-bottom: 2.8%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.legenda {
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.itens {
+  margin-bottom: 10px;
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.itens li {
+  margin-bottom: 5px;
+}
+
+.preco {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.botcompra {
+  display: block;
+  padding: 10px 20px;
+  background-color: #00ff4c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.star{
+  color: rgb(216, 216, 0);
+
+}
+.frete{
+  color: green;
+  font-weight: normal;
+}
+
+/* Descrição do produto vermais vermenos */
+.conteudo{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+}
+
+.conteudo h2 span {
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#menos {
+  display: none;
+}
+
+.conteudo p {
+  height: 10px;
+  display: none;
+  margin-bottom: 10%;
+}

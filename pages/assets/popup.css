@@ -1,6 +1,7 @@
 .popup-wrapper, .popup-total {
     display: none;
-    background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000);
+    /* background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000); */
+    backdrop-filter: blur(4px); /* Adiciona um efeito de embaçamento ao fundo */
     position: fixed;
     top: 0;
     left: 0%;
