@@ -2,9 +2,6 @@
     color: #fff;
     text-decoration: none;
   }
-  .pg-footer {
-    font-family: 'Times New Roman', Times, serif;
-  }
 
   #baixo, #baixo2{
     margin-top: 125px;
@@ -13,6 +10,7 @@
   .footer {
       background-color: rgb(41, 41, 41);
       color: #fff;
+      z-index: 2;
   }
   .footer-wave-svg {
       background-color: transparent;
