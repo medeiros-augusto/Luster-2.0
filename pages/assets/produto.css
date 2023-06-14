@@ -24,12 +24,15 @@
 /* Bloco direito de informações do produto */
 .descricao {
   padding: 20px;
-  width: 30%;
+  width: 25%;
   margin-top: 1.2%;
   margin-bottom: 2.8%;
   border: 1px solid grey;
   border-radius: 10px;
   box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.descricao div{
+  margin-left: 10px;
 }
 
 .title {
@@ -98,5 +101,5 @@
 .conteudo p {
   height: 10px;
   display: none;
-  margin-bottom: 10%;
+  margin-bottom: 12%;
 }

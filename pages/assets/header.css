@@ -103,4 +103,5 @@ body {
 }
 header{
     font-family: sans-serif;
+    z-index: 1;
 }
