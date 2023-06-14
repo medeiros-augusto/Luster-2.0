@@ -11,10 +11,10 @@ app.use('/images', express.static('images'))
 app.use('/pages', express.static('pages'))
 
 const connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '',
-  database: 'luster',
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'root',
+    database: 'luster',
 });
 
 connection.connect(function(err) {
