@@ -1,7 +1,8 @@
-.popup-wrapper, .popup-total {
+.popup-wrapper,
+.popup-total {
     display: none;
-    /* background: -webkit-linear-gradient(right, #660000, #800000, #b30000, #e60000); */
-    backdrop-filter: blur(4px); /* Adiciona um efeito de embaçamento ao fundo */
+    backdrop-filter: blur(4px);
+    /* Adiciona um efeito de embaçamento ao fundo */
     position: fixed;
     top: 0;
     left: 0%;
@@ -9,7 +10,8 @@
     height: 100%;
 }
 
-.popup-wrapper *, .popup-total * {
+.popup-wrapper *,
+.popup-total * {
     color: white;
 }
 
@@ -24,7 +26,8 @@
     position: relative;
 }
 
-.popup-link, #pop-volta {
+.popup-link,
+#pop-volta {
     cursor: pointer;
     border-radius: 5px;
     padding: 6px 10px;
