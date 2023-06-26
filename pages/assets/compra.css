@@ -8,9 +8,40 @@
 .quadro-dir {
     padding: 20px;
     width: 25%;
-    margin-top: 1.2%;
-    margin-bottom: 2.8%;
+    margin-top: 3%;
+    margin-bottom: 4%;
     border: 1px solid grey;
     border-radius: 10px;
     box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.quadro-dir{
+    width: 19%;
+}
+.quadro-esq h2{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.quadro-esq img{
+    width: 100%;
+    border-radius: 15px;
+}
+.fim{
+    display: block;
+    padding: 10px 20px;
+    background-color: #00ff4c;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.fim:hover{
+    background-color: #004916;
+}
+.frete {
+    color: green;
+    font-weight: normal;
+}
+#end{
+    margin: 0;
 }
