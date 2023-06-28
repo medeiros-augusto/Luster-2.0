@@ -40,12 +40,15 @@ function spinWheel() {
 function red() {
     selectedColor = 'red';
 }
+
 function blue() {
     selectedColor = 'blue';
 }
+
 function green() {
     selectedColor = 'green';
 }
+
 function yellow() {
     selectedColor = 'yellow';
 }

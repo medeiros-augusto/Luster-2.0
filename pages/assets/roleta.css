@@ -1,4 +1,5 @@
 /* Quadrado da roleta */
+
 .paidefml {
     display: flex;
     position: relative;
@@ -12,9 +13,11 @@
     margin-bottom: 4%;
     border: 1px solid grey;
     border-radius: 10px;
+    background-color: rgb(41, 41, 41);
     box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
 
 /* Importando a fonte Poppins do Google Fonts */
 
@@ -22,14 +25,18 @@
 
 /* Configurações básicas de estilos para todos os elementos da roleta */
 
+
 /* Estilos para os cabeçalhos de nível 1 */
+
 .roulette h1 {
     text-align: center;
     font-weight: 600;
     margin: 0 1rem 2rem;
 }
 
+
 /* Estilos para a roda de roleta */
+
 .wheel {
     margin: auto;
     width: 300px;
@@ -40,7 +47,9 @@
     transition: all 8000ms;
 }
 
+
 /* Estilos para os segmentos da roda de roleta */
+
 .wheel-segment {
     position: absolute;
     top: 0;
@@ -51,31 +60,41 @@
     clip-path: polygon(50% 50%, 0 0, 0 100%);
 }
 
+
 /* Estilos para o primeiro segmento da roda (vermelho) */
+
 .wheel-segment:nth-child(1) {
     background: red;
     transform: rotate(45deg);
 }
 
+
 /* Estilos para o segundo segmento da roda (verde) */
+
 .wheel-segment:nth-child(2) {
     background: green;
     transform: rotate(135deg);
 }
 
+
 /* Estilos para o terceiro segmento da roda (azul) */
+
 .wheel-segment:nth-child(3) {
     background: blue;
     transform: rotate(225deg);
 }
 
+
 /* Estilos para o quarto segmento da roda (amarelo) */
+
 .wheel-segment:nth-child(4) {
     background: yellow;
     transform: rotate(315deg);
 }
 
+
 /* Estilos para o texto dentro dos segmentos da roda */
+
 .wheel-text {
     position: absolute;
     top: 50%;
@@ -91,14 +110,18 @@
     height: 80%;
 }
 
+
 /* Estilos para o contêiner da roleta */
+
 .roulette {
     position: relative;
     margin: auto;
     text-align: center;
 }
 
+
 /* Estilos para o ponteiro da roleta */
+
 .roulette::before {
     content: "";
     position: absolute;
@@ -113,7 +136,9 @@
     z-index: 20;
 }
 
+
 /* Estilos para os botões da roleta */
+
 .input-container {
     margin-bottom: 20px;
 }
@@ -145,7 +170,9 @@
     background-color: #c0392b;
 }
 
+
 /*cor dos botões*/
+
 .color-button {
     width: 50px;
     height: 50px;
@@ -169,4 +196,16 @@
 
 .yellow {
     background-color: yellow;
+}
+
+
+/* Input da roleta */
+
+#input-value {
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px outset #e60000;
+    color: black;
 }
