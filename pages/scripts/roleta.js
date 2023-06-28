@@ -40,16 +40,25 @@ function spinWheel() {
 function red() {
     selectedColor = 'red';
 }
+function blue() {
+    selectedColor = 'blue';
+}
+function green() {
+    selectedColor = 'green';
+}
+function yellow() {
+    selectedColor = 'yellow';
+}
 
 function getWinningColor(angle) { // Função para obter a cor vencedora com base no ângulo
     if (angle >= 0 && angle < 90) {
         return 'red'; // Retorna 'red' para ângulos entre 0 e 90
     } else if (angle >= 90 && angle < 180) {
-        return 'green'; // Retorna 'green' para ângulos entre 90 e 180
+        return 'yellow'; // Retorna 'green' para ângulos entre 90 e 180
     } else if (angle >= 180 && angle < 270) {
         return 'blue'; // Retorna 'blue' para ângulos entre 180 e 270
     } else {
-        return 'yellow'; // Retorna 'yellow' para ângulos maiores ou iguais a 270
+        return 'green'; // Retorna 'yellow' para ângulos maiores ou iguais a 270
     }
 }
 
