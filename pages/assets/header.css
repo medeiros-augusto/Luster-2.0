@@ -4,6 +4,7 @@
     position: fixed;
     justify-content: space-between;
     background: rgb(41, 41, 41);
+    z-index: 999;
 }
 
 .logoheader {
