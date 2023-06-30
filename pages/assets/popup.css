@@ -1,5 +1,6 @@
 .popup-wrapper,
-.popup-total {
+.popup-total,
+.popup-recarga {
     display: none;
     backdrop-filter: blur(4px);
     /* Adiciona um efeito de embaçamento ao fundo */
@@ -12,7 +13,8 @@
 }
 
 .popup-wrapper *,
-.popup-total * {
+.popup-total *,
+.popup-recarga * {
     color: white;
 }
 

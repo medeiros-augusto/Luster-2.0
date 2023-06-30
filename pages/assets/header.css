@@ -4,7 +4,7 @@
     position: fixed;
     justify-content: space-between;
     background: rgb(41, 41, 41);
-    z-index: 999;
+    z-index: 2;
 }
 
 .logoheader {
@@ -90,6 +90,7 @@
 .sub-cabecalho>div>a, .sub-cabecalho>div>span {
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .sub-cabecalho div {

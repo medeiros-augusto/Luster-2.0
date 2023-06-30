@@ -5,6 +5,8 @@ const popupcad = document.querySelector('.popup-total')
 const closebutton = document.querySelector('.popup-close')
 const geral = document.querySelector('.pg-footer')
 const volta = document.querySelector('#pop-volta')
+const recarga = document.querySelector('#recarga')
+const poprecarga = document.querySelector('.popup-recarga')
 
 button.addEventListener('click', () => {
     popup.style.display = 'block'
@@ -17,6 +19,9 @@ signup.addEventListener('click', () => {
 volta.addEventListener('click', () => {
     popup.style.display = 'block'
     popupcad.style.display = 'none'
+})
+recarga.addEventListener('click', () => {
+    poprecarga.style.display = 'block'
 })
 
 popup.addEventListener('click', event => {
@@ -37,6 +42,16 @@ popupcad.addEventListener('click', event => {
     const closepopup = classnames.some(classname => classname === classnameofclickedelement)
     if (closepopup) {
         popupcad.style.display = 'none'
+        geral.style.display = 'block'
+    }
+})
+poprecarga.addEventListener('click', event => {
+    const classnameofclickedelement = event.target.classList[0];
+    console.log(classnameofclickedelement)
+    const classnames = ['popup-close', 'popup-recarga']
+    const closepopup = classnames.some(classname => classname === classnameofclickedelement)
+    if (closepopup) {
+        poprecarga.style.display = 'none'
         geral.style.display = 'block'
     }
 })
