@@ -42,10 +42,6 @@ function red() {
     selectedColor = 'red';
 }
 
-function blue() {
-    selectedColor = 'blue';
-}
-
 function green() {
     selectedColor = 'green';
 }
@@ -73,8 +69,6 @@ function calculateResult(color, inputValue) { // Função para calcular o result
         multiplier = 2; // O multiplicador é 2
     } else if (color === 'green') { // Se a cor for 'green'
         multiplier = 5; // O multiplicador é 5
-    } else if (color === 'blue') { // Se a cor for 'blue'
-        multiplier = 10; // O multiplicador é 10
     } else if (color === 'yellow') { // Se a cor for 'yellow'
         multiplier = 5; // O multiplicador é 2
     }
