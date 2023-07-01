@@ -13,7 +13,7 @@ app.use('/pages', express.static('pages'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'luster',
 });
 
@@ -60,19 +60,19 @@ app.listen(3000, () => {
 //Cadastro
 
 app.post('/cadastro', (req, res) => {
-    let email = req.body.mail;
-    let nome = req.body.nome;
-    let senha1 = req.body.senha;
-  
-    connection.query("INSERT INTO usuario(email_usuario, nome_usuario, senha_usuario) VALUES ('" + email + "', '" + nome + "', '" + senha +"')",
-      function (err, rows, fields) {
-        if (err) {
-          console.log("Erro ao inserir no banco de dados:", err);
-          res.send("Erro ao cadastrar usuário", err);
-        } else {
-          console.log("Usuário cadastrado com sucesso:", rows);
-          res.redirect('http://localhost:3000/login');
+    let email = req.body.email;
+    let nome = req.body.name;
+    let senha1 = req.body.pass;
+
+    connection.query("INSERT INTO usuario(email_usuario, nome_usuario, senha_usuario) VALUES ('" + email + "', '" + nome + "', '" + senha1 + "')",
+        function(err, rows, fields) {
+            if (err) {
+                console.log("Erro ao inserir no banco de dados:", err);
+                res.send("Erro ao cadastrar usuário", err);
+            } else {
+                console.log("Usuário cadastrado com sucesso:", rows);
+                res.send("Usuário cadastrado com sucesso")
+            }
         }
-      }
     );
-  });
+});
