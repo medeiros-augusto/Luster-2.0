@@ -13,7 +13,7 @@
     margin-bottom: 4%;
     border: 1px solid grey;
     border-radius: 10px;
-    background-color: rgb(41, 41, 41);
+    background: url(https://singularityhub.com/wp-content/uploads/2019/07/Casino-poker-chips-on-green-felt-background-artificial-intelligence-shutterstock-658269847.jpg);
     box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -64,7 +64,7 @@
 /* Estilos para o primeiro segmento da roda (vermelho) */
 
 .wheel-segment:nth-child(1) {
-    background: red;
+    background: #7c0000;
     transform: rotate(45deg);
 }
 
@@ -72,7 +72,7 @@
 /* Estilos para o segundo segmento da roda (verde) */
 
 .wheel-segment:nth-child(2) {
-    background: green;
+    background: black;
     transform: rotate(135deg);
 }
 
@@ -80,7 +80,7 @@
 /* Estilos para o terceiro segmento da roda (azul) */
 
 .wheel-segment:nth-child(3) {
-    background: blue;
+    background: #7c0000;
     transform: rotate(225deg);
 }
 
@@ -88,7 +88,7 @@
 /* Estilos para o quarto segmento da roda (amarelo) */
 
 .wheel-segment:nth-child(4) {
-    background: yellow;
+    background: white;
     transform: rotate(315deg);
 }
 
@@ -183,19 +183,15 @@
 }
 
 .red {
-    background-color: red;
+    background-color: #7c0000;
 }
 
 .green {
-    background-color: green;
+    background-color: black;
 }
 
 .blue {
-    background-color: blue;
-}
-
-.yellow {
-    background-color: yellow;
+    background-color: white;
 }
 
 

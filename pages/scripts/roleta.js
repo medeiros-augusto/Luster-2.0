@@ -1,5 +1,5 @@
 const wheel = document.querySelector('.wheel'); // Seleciona o elemento da roda
-const btn = document.querySelector('.spin-button'); // Seleciona o elemento do botão
+const btn = document.querySelector('.botaogira'); // Seleciona o elemento do botão
 const input = document.querySelector('#input-value'); // Seleciona o elemento do input
 
 let current = 0; // Variável para armazenar a posição atual da roda
@@ -29,9 +29,10 @@ function spinWheel() {
             const inputValue = Number(input.value); // Obtém o valor inserido no input convertendo para número
             const result = calculateResult(selectedColor, inputValue); // Calcula o resultado com base na cor selecionada e no valor inserido
 
-            alert(`Você ganhou ${result} pontos!`); // Exibe um alerta com a pontuação obtida
+            alert(`Você ganhou R$ ${result}!`); // Exibe um alerta com a pontuação obtida
         } else {
-            alert('Você perdeu! Tente novamente.');
+            let inputValue = Number(input.value);
+            alert('Você perdeu R$ ' + inputValue + '! Tente novamente.');
         }
     }, { once: true }); // Remove o listener de evento após ser acionado
 }
@@ -59,7 +60,7 @@ function getWinningColor(angle) { // Função para obter a cor vencedora com bas
     } else if (angle >= 90 && angle < 180) {
         return 'yellow'; // Retorna 'green' para ângulos entre 90 e 180
     } else if (angle >= 180 && angle < 270) {
-        return 'blue'; // Retorna 'blue' para ângulos entre 180 e 270
+        return 'red'; // Retorna 'blue' para ângulos entre 180 e 270
     } else {
         return 'green'; // Retorna 'yellow' para ângulos maiores ou iguais a 270
     }
@@ -75,7 +76,7 @@ function calculateResult(color, inputValue) { // Função para calcular o result
     } else if (color === 'blue') { // Se a cor for 'blue'
         multiplier = 10; // O multiplicador é 10
     } else if (color === 'yellow') { // Se a cor for 'yellow'
-        multiplier = 2; // O multiplicador é 2
+        multiplier = 5; // O multiplicador é 2
     }
 
     return inputValue * multiplier;

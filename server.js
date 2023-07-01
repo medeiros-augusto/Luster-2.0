@@ -13,7 +13,7 @@ app.use('/pages', express.static('pages'))
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'luster',
 });
 
@@ -59,7 +59,7 @@ app.listen(3000, () => {
 
 //Cadastro
 
-  app.post('/cadastro', (req, res) => {
+app.post('/cadastro', (req, res) => {
     let email = req.body.mail;
     let nome = req.body.nome;
     let senha1 = req.body.senha;
