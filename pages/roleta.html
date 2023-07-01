@@ -51,7 +51,7 @@
                 <a href="">HISTÓRICO</a>
             </div>
             <div>
-                <a href="">RECARREGAR</a>
+                <span id="recarga">RECARREGAR</span>
             </div>
             <div>
                 <a href="">MINHA CONTA</a>
@@ -82,6 +82,60 @@
                     <button class="color-button yellow" onclick="yellow()"></button> <br>
                     <input type="number" id="input-value" placeholder="Insira um valor" /> <br>
                     <span class="botaogira" onclick="spinWheel()">Girar</span>
+                </div>
+            </div>
+        </div>
+        <div class="popup-recarga">
+            <div class="popup">
+                <div class="popup-close">X</div>
+                <div class="popup-content">
+                    <img src="images/luster.png" alt="logo" width="200px">
+                    <h2>Recarga</h2>
+                    <form action="/recarga" method="post">
+                        <input type="E-mail" name="mail" placeholder="E-mail" class="input-form">
+                        <input type="password" name="senha" placeholder="Senha" class="input-form">
+                        <input type="text" name="valor" placeholder="Valor da recarga" class="input-form"> <br> <br>
+                        <input type="submit" value="RECARREGAR" class="but">
+                    </form>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="popup-wrapper">
+            <div class="popup">
+                <div class="popup-close">X</div>
+                <div class="popup-content">
+                    <img src="images/luster.png" alt="logo" width="200px">
+                    <h2>Entrar</h2>
+                    <form action="/login" method="post">
+                        <input type="E-mail" name="mail" placeholder="E-mail" class="input-form">
+                        <input type="password" name="senha" placeholder="Senha" class="input-form">
+                        <input type="submit" value="ENTRAR" class="but">
+                    </form>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="popup-link">Cadastrar</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-total">
+            <div class="popup">
+                <div class="popup-close">X</div>
+                <div class="popup-content">
+                    <img src="images/luster.png" alt="logo" width="200px">
+                    <h2>Cadastrar</h2>
+                    <form action="/cadastro" method="post">
+                        <input type="text" name="name" placeholder="Nome de usuário" class="input-form">
+                        <input type="E-mail" name="mail" placeholder="E-mail" class="input-form">
+                        <input type="password" name="senha" placeholder="Senha" class="input-form">
+                        <input type="submit" value="CADASTRAR" class="but">
+                    </form>
+                    <br>
+                    <hr>
+                    <br>
+                    <p id="pop-volta">Entrar</p>
                 </div>
             </div>
         </div>
