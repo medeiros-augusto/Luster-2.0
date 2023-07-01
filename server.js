@@ -71,7 +71,7 @@ app.post('/cadastro', (req, res) => {
                 res.send("Erro ao cadastrar usuário", err);
             } else {
                 console.log("Usuário cadastrado com sucesso:", rows);
-                res.send("Usuário cadastrado com sucesso")
+                res.sendFile(__dirname + '/index.html');
             }
         }
     );
