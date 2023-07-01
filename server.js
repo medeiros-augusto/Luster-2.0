@@ -56,3 +56,23 @@ app.post('/login', (req, res) => {
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000!')
 })
+
+//Cadastro
+
+  app.post('/cadastro', (req, res) => {
+    let email = req.body.mail;
+    let nome = req.body.nome;
+    let senha1 = req.body.senha;
+  
+    connection.query("INSERT INTO usuario(email_usuario, nome_usuario, senha_usuario) VALUES ('" + email + "', '" + nome + "', '" + senha +"')",
+      function (err, rows, fields) {
+        if (err) {
+          console.log("Erro ao inserir no banco de dados:", err);
+          res.send("Erro ao cadastrar usuário", err);
+        } else {
+          console.log("Usuário cadastrado com sucesso:", rows);
+          res.redirect('http://localhost:3000/login');
+        }
+      }
+    );
+  });
