@@ -13,8 +13,6 @@ function spinWheel() {
 
     const rotate = Math.floor(Math.random() * 360) + 720; // Gera um valor aleatório de rotação
     const angle = current + rotate; // Calcula o ângulo final da roda
-    console.log(current)
-
     wheel.style.transform = `rotate(${angle}deg)`; // Aplica a transformação de rotação na roda
 
     current = angle; // Atualiza a posição atual da roda
@@ -31,7 +29,7 @@ function spinWheel() {
 
             alert(`Você ganhou R$ ${result}!`); // Exibe um alerta com a pontuação obtida
         } else {
-            let inputValue = Number(input.value);
+            var inputValue = Number(input.value);
             alert('Você perdeu R$ ' + inputValue + '! Tente novamente.');
         }
     }, { once: true }); // Remove o listener de evento após ser acionado
@@ -73,5 +71,8 @@ function calculateResult(color, inputValue) { // Função para calcular o result
         multiplier = 5; // O multiplicador é 2
     }
 
+    var resultado = inputValue * multiplier
+    console.log(inputValue)
+    console.log(resultado)
     return inputValue * multiplier;
 }

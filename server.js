@@ -81,27 +81,27 @@ const cheerio = require('cheerio');
         if (error) throw error;
         const saldo = parseFloat(results[0].saldo_usuario);
         console.log(saldo)
-        const filePath = 'index.html';
+        const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
         
-        fs.readFile(filePath, 'utf8', function(error, data) {
-            if (error) throw error;
-      
-            // Carrega o HTML usando o cheerio
-            const $ = cheerio.load(data);
-      
-            // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
-            $('#header-saldo').text(`R$ ${saldo}`);
-      
-            // Obtém o HTML modificado
-            const htmlModificado = $.html();
-      
-            fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
+        filePaths.forEach(function(filePath){
+            fs.readFile(filePath, 'utf8', function(error, data) {
                 if (error) throw error;
-        
-                // Envie o HTML modificado como resposta
-                res.send(htmlModificado);
+          
+                // Carrega o HTML usando o cheerio
+                const $ = cheerio.load(data);
+          
+                // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
+                $('#header-saldo').text(`R$ ${saldo}`);
+          
+                // Obtém o HTML modificado
+                const htmlModificado = $.html();
+          
+                fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
+                    if (error) throw error;
+                  });
               });
-          });
+        })
+        res.sendFile(__dirname + '/' + filePaths[0]);
       });
   });
 
