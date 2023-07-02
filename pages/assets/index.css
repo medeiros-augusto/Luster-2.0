@@ -56,7 +56,7 @@ main h1 {
     width: 400%;
     height: 100%;
     display: flex;
-    animation: slideAnimation 15s infinite;
+    animation: slideAnimation 30s infinite;
 }
 
 .slide {

@@ -20,18 +20,15 @@
                     <img src="images/user.png" alt="fotoperfil">
                 </div>
                 <div class="desc-user">
-                    <div class="nome-user">
-                        <p>Faça login na Luster</p>
-                    </div>
                     <div class="links-user">
                         <div class="link">
-                            <p id="login">Entrar</p>
+                            <p id="login">Seja bem-vindo, undefined!</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="saldo">
-                <p id="header-saldo">R$ 1220</p>
+                <p id="header-saldo">Saldo</p>
             </div>
             <div class="carrinho">
                 <img src="images/carrinho.png" alt="carrinho">
@@ -77,8 +74,10 @@
                     <button id="verm" class="color-button red" onclick="red()"></button>
                     <button class="color-button green" onclick="green()"></button>
                     <button class="color-button yellow" onclick="yellow()"></button> <br>
-                    <input type="number" id="input-value" placeholder="Insira um valor"> <br>
-                    <span class="botaogira" onclick="spinWheel()">Girar</span>
+                    <form action="/aposta" method="post">
+                        <input type="number" id="input-value" placeholder="Insira um valor"> <br>
+                        <span class="botaogira" onclick="spinWheel()">Girar</span>
+                    </form>
                 </div>
             </div>
         </div>

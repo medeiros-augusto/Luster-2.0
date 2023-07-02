@@ -20,7 +20,6 @@ function spinWheel() {
     btn.disabled = true; // Desabilita o botão temporariamente
     wheel.addEventListener('transitionend', () => { // Adiciona um listener de evento de transição na roda
         btn.disabled = false; // Habilita o botão novamente após a transição finalizar
-
         const winningColor = getWinningColor(angle % 360); // Obtém a cor vencedora com base no ângulo resultante
 
         if (winningColor === selectedColor) {
@@ -70,9 +69,5 @@ function calculateResult(color, inputValue) { // Função para calcular o result
     } else if (color === 'yellow') { // Se a cor for 'yellow'
         multiplier = 5; // O multiplicador é 2
     }
-
-    var resultado = inputValue * multiplier
-    console.log(inputValue)
-    console.log(resultado)
     return inputValue * multiplier;
 }

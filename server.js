@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mysql = require('mysql2');
 const app = express()
+const fs = require('fs');
+const cheerio = require('cheerio');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -24,6 +26,37 @@ connection.connect(function(err) {
         console.log("Erro: Conexão NÃO realizada", err);
     }
 });
+
+app.get('/',function(req, res) {
+    res.sendFile(__dirname + '/index.html')
+    connection.query("SELECT saldo_usuario FROM usuario", function(error, results, fields) {
+        if (error) throw error;
+        const saldo = parseFloat(results[0].saldo_usuario);
+        module.exports = saldo
+        const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
+        
+        filePaths.forEach(function(filePath){
+            fs.readFile(filePath, 'utf8', function(error, data) {
+                if (error) throw error;
+          
+                // Carrega o HTML usando o cheerio
+                const $ = cheerio.load(data);
+          
+                // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
+                $('#login').text(`Seja bem-vindo, ${results[0].nome_usuario}!`);
+                $('#header-saldo').text(`R$ ${saldo}`);
+          
+                // Obtém o HTML modificado
+                const htmlModificado = $.html();
+          
+                fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
+                    if (error) throw error;
+                  });
+              });
+        })
+        res.sendFile(__dirname + '/' + filePaths[0]);
+      });
+})
 
 //Cadastro
 
@@ -57,7 +90,33 @@ app.post('/login', (req, res) => {
             if (rows.length > 0) {
 
                 if (rows[0].senha_usuario === password) {
-                    res.send('Login com Sucesso!!!'); //ALTERAR 
+                    connection.query("SELECT saldo_usuario FROM usuario where email_usuario = '" + username + "'", function(error, results, fields) {
+                        if (error) throw error;
+                        const saldo = parseFloat(results[0].saldo_usuario);
+                        module.exports = saldo
+                        const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
+                        
+                        filePaths.forEach(function(filePath){
+                            fs.readFile(filePath, 'utf8', function(error, data) {
+                                if (error) throw error;
+                          
+                                // Carrega o HTML usando o cheerio
+                                const $ = cheerio.load(data);
+                          
+                                // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
+                                $('#login').text(`Seja bem-vindo, ${rows[0].nome_usuario}!`);
+                                $('#header-saldo').text(`R$ ${saldo}`);
+                          
+                                // Obtém o HTML modificado
+                                const htmlModificado = $.html();
+                          
+                                fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
+                                    if (error) throw error;
+                                  });
+                              });
+                        })
+                        res.sendFile(__dirname + '/' + filePaths[0]);
+                      });
                 } else {
                     res.send('Senha incorreta');
                 }
@@ -72,38 +131,11 @@ app.post('/login', (req, res) => {
     });
 });
 
-//Consulta do Saldo do usuário
-const fs = require('fs');
-const cheerio = require('cheerio');
+//recarga
+app.post('/recarga',(req, res) => {
 
-  app.get('/', function(req, res) {
-    connection.query('SELECT saldo_usuario FROM usuario', function(error, results, fields) {
-        if (error) throw error;
-        const saldo = parseFloat(results[0].saldo_usuario);
-        console.log(saldo)
-        const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
-        
-        filePaths.forEach(function(filePath){
-            fs.readFile(filePath, 'utf8', function(error, data) {
-                if (error) throw error;
-          
-                // Carrega o HTML usando o cheerio
-                const $ = cheerio.load(data);
-          
-                // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
-                $('#header-saldo').text(`R$ ${saldo}`);
-          
-                // Obtém o HTML modificado
-                const htmlModificado = $.html();
-          
-                fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
-                    if (error) throw error;
-                  });
-              });
-        })
-        res.sendFile(__dirname + '/' + filePaths[0]);
-      });
-  });
+})
+
 
 app.listen(3010, () => {
     console.log('Servidor rodando na porta 3010!')
