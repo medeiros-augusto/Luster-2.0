@@ -66,7 +66,6 @@ app.post('/login', (req, res) => {
                     connection.query("SELECT saldo_usuario FROM usuario where email_usuario = '" + username + "'", function(error, results, fields) {
                         if (error) throw error;
                         const saldo = parseFloat(results[0].saldo_usuario);
-                        module.exports = saldo
                         const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
                         
                         filePaths.forEach(function(filePath){
@@ -109,9 +108,33 @@ app.post('/recarga',(req, res) => {
     let gmail = req.body.gmail
     let passe = req.body.passe
     let valor = req.body.valor
-    connection.query("UPDATE `usuario` SET `saldo_usuario` = `saldo_usuario` + 20 WHERE email_usuario = '"+ gmail +"'", function(error, results, fields) {
+    connection.query("UPDATE `usuario` SET `saldo_usuario` = `saldo_usuario` + "+ valor + " WHERE email_usuario = '"+ gmail +"'", function(error, results, fields) {
         if (error) throw error;
-        res.sendFile(__dirname + '/index.html');
+        connection.query("SELECT saldo_usuario FROM usuario where email_usuario = '" + gmail + "'", function(error, results, fields) {
+            if (error) throw error;
+            const saldo = parseFloat(results[0].saldo_usuario);
+            const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
+            
+            filePaths.forEach(function(filePath){
+                fs.readFile(filePath, 'utf8', function(error, data) {
+                    if (error) throw error;
+              
+                    // Carrega o HTML usando o cheerio
+                    const $ = cheerio.load(data);
+              
+                    // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
+                    $('#header-saldo').text(`R$ ${saldo}`);
+              
+                    // Obtém o HTML modificado
+                    const htmlModificado = $.html();
+              
+                    fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
+                        if (error) throw error;
+                      });
+                  });
+            })
+            res.sendFile(__dirname + '/' + filePaths[0]);
+          });
     });
 })
 
