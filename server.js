@@ -106,9 +106,14 @@ app.post('/login', (req, res) => {
 
 //recarga
 app.post('/recarga',(req, res) => {
-
+    let gmail = req.body.gmail
+    let passe = req.body.passe
+    let valor = req.body.valor
+    connection.query("UPDATE `usuario` SET `saldo_usuario` = `saldo_usuario` + 20 WHERE email_usuario = '"+ gmail +"'", function(error, results, fields) {
+        if (error) throw error;
+        res.sendFile(__dirname + '/index.html');
+    });
 })
-
 
 app.listen(3010, () => {
     console.log('Servidor rodando na porta 3010!')
