@@ -29,33 +29,6 @@ connection.connect(function(err) {
 
 app.get('/',function(req, res) {
     res.sendFile(__dirname + '/index.html')
-    connection.query("SELECT saldo_usuario FROM usuario", function(error, results, fields) {
-        if (error) throw error;
-        const saldo = parseFloat(results[0].saldo_usuario);
-        module.exports = saldo
-        const filePaths = ['index.html','pages/roleta.html','pages/compra.html','pages/gosverni.html','pages/dropdown.html']
-        
-        filePaths.forEach(function(filePath){
-            fs.readFile(filePath, 'utf8', function(error, data) {
-                if (error) throw error;
-          
-                // Carrega o HTML usando o cheerio
-                const $ = cheerio.load(data);
-          
-                // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
-                $('#login').text(`Seja bem-vindo, ${results[0].nome_usuario}!`);
-                $('#header-saldo').text(`R$ ${saldo}`);
-          
-                // Obtém o HTML modificado
-                const htmlModificado = $.html();
-          
-                fs.writeFile(filePath, htmlModificado, 'utf8', function(error) {
-                    if (error) throw error;
-                  });
-              });
-        })
-        res.sendFile(__dirname + '/' + filePaths[0]);
-      });
 })
 
 //Cadastro
