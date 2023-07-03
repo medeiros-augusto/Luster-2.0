@@ -1,47 +1,63 @@
+/* Estilos para a classe "quadro" */
 .quadro {
-    display: flex;
-    justify-content: center;
-    gap: 10%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
 }
 
+/* Estilos para as classes "quadro-esq" e "quadro-dir" */
 .quadro-esq,
 .quadro-dir {
-    padding: 20px;
-    width: 25%;
-    margin-top: 3%;
-    margin-bottom: 4%;
-    border: 1px solid grey;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 25%;
+  margin-top: 3%;
+  margin-bottom: 4%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.quadro-dir{
-    width: 19%;
+
+/* Estilos específicos para a classe "quadro-dir" */
+.quadro-dir {
+  width: 19%;
 }
-.quadro-esq h2{
-    margin: 0;
-    margin-bottom: 10px;
+
+/* Estilos para o elemento "h2" dentro da classe "quadro-esq" */
+.quadro-esq h2 {
+  margin: 0;
+  margin-bottom: 10px;
 }
-.quadro-esq img{
-    width: 100%;
-    border-radius: 15px;
+
+/* Estilos para a imagem dentro da classe "quadro-esq" */
+.quadro-esq img {
+  width: 100%;
+  border-radius: 15px;
 }
-.fim{
-    display: block;
-    padding: 10px 20px;
-    background-color: #00ff4c;
-    color: #fff;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 18px;
+
+/* Estilos para o botão com a classe "fim" */
+.fim {
+  display: block;
+  padding: 10px 20px;
+  background-color: #00ff4c;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
 }
-.fim:hover{
-    background-color: #004916;
+
+/* Estilos quando o botão "fim" é hover (quando o mouse passa por cima) */
+.fim:hover {
+  background-color: #004916;
 }
+
+/* Estilos para a classe "frete" */
 .frete {
-    color: green;
-    font-weight: normal;
+  color: green;
+  font-weight: normal;
 }
-#end{
-    margin: 0;
+
+/* Estilos para o elemento com o id "end" */
+#end {
+  margin: 0;
 }
