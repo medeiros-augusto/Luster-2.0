@@ -5,7 +5,9 @@ const popupcad = document.querySelector(".popup-total"); // Seleciona o elemento
 const closebutton = document.querySelector(".popup-close"); // Seleciona o elemento com classe "popup-close" e armazena na variável closebutton
 const volta = document.querySelector("#pop-volta"); // Seleciona o elemento com id "pop-volta" e armazena na variável volta
 const recarga = document.querySelector("#recarga"); // Seleciona o elemento com id "recarga" e armazena na variável recarga
-var poprecarga = document.querySelector(".popup-recarga"); // Seleciona o elemento com classe "popup-recarga" e armazena na variável poprecarga
+const poprecarga = document.querySelector(".popup-recarga"); // Seleciona o elemento com classe "popup-recarga" e armazena na variável poprecarga
+const linkhistorico = document.querySelector("#historico")
+const popuphistorico = document.querySelector(".popuphistorico")
 
 button.addEventListener("click", () => {
   // Adiciona um ouvinte de eventos de clique ao botão "login"
@@ -28,6 +30,10 @@ recarga.addEventListener("click", () => {
   // Adiciona um ouvinte de eventos de clique ao elemento com id "recarga"
   poprecarga.style.display = "block"; // Altera o estilo de exibição do poprecarga para "block" (exibido)
 });
+
+linkhistorico.addEventListener("click", () => {
+  popuphistorico.style.display = "block"
+})
 
 popup.addEventListener("click", (event) => {
   // Adiciona um ouvinte de eventos de clique ao elemento "popup-wrapper"
@@ -65,5 +71,18 @@ poprecarga.addEventListener("click", (event) => {
   ); // Verifica se a classe do elemento clicado está presente no array de classes
   if (closepopup) {
     poprecarga.style.display = "none"; // Fecha o poprecarga alterando o estilo de exibição para "none" (oculto)
+  }
+});
+
+popuphistorico.addEventListener("click", (event) => {
+  // Adiciona um ouvinte de eventos de clique ao elemento "popup-recarga"
+  const classnameofclickedelement = event.target.classList[0]; // Obtém a classe do elemento clicado dentro do poprecarga
+  console.log(classnameofclickedelement); // Imprime a classe do elemento clicado no console
+  const classnames = ["popup-close", "popuphistorico"]; // Array de classes que indicam que o poprecarga deve ser fechado
+  const closepopup = classnames.some(
+    (classname) => classname === classnameofclickedelement
+  ); // Verifica se a classe do elemento clicado está presente no array de classes
+  if (closepopup) {
+    popuphistorico.style.display = "none"; // Fecha o poprecarga alterando o estilo de exibição para "none" (oculto)
   }
 });
