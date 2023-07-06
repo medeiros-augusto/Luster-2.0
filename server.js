@@ -40,7 +40,7 @@ app.post('/cadastro', (req, res) => {
 
     if (email.length > 1) {
         if (nome.length > 1) {
-            if (senha1.length > 0) {
+            if (senha1.length > 1) {
                 connection.query("INSERT INTO usuario(email_usuario, nome_usuario, senha_usuario) VALUES ('" + email + "', '" + nome + "', '" + senha1 + "')",
                     function (err, rows, fields) {
                         if (err) {
@@ -52,13 +52,13 @@ app.post('/cadastro', (req, res) => {
                         }
                     }
                 )
-            }else{
+            } else {
                 res.send("Senha não possui caracteres suficientes!")
             }
-        }else{
+        } else {
             res.send("Nome não possui caracteres suficientes!")
         }
-    }else{
+    } else {
         res.send("Email não possui caracteres suficientes!")
     }
 })
@@ -171,6 +171,46 @@ app.post('/recarga', (req, res) => {
         }
     });
 })
+
+//Compra
+
+app.post('/compra', (req, res) => {
+    let email = req.body.email
+    let cep = req.body.cep
+    let num = req.body.numero
+    let cup = req.body.cupom
+
+    if (cep.length > 1) {
+        if (num.length > 0) {
+            if (email.length > 1) {
+                connection.query('SET @valor_consulta := NULL;', (error, results) => {
+                    if (error) throw error;
+
+                    connection.query("SELECT id_usuario INTO @valor_consulta FROM usuario WHERE email_usuario = '" + email + "';", (error, results) => {
+                        if (error) throw error;
+
+                        connection.query("INSERT INTO compra (id_fk_usuario, fk_id_produto, quantidade) VALUES (@valor_consulta, 1, 1);",
+                            function (err, rows, fields) {
+                                if (!err) {
+                                    res.sendFile(path.join(__dirname, 'pages', 'compraconcluida.html'));
+                                } else {
+                                    console.log("Erro: Consulta não realizada", err);
+                                    res.send('Usuário não cadastrado!');
+                                }
+                            });
+                    });
+                });
+            } else {
+                res.send("E-mail não possui caracteres suficientes!")
+            }
+        } else {
+            res.send("Numero não possui caracteres suficientes!")
+        }
+    } else {
+        res.send("CEP não possui caracteres suficientes!")
+    }
+})
+
 app.listen(3010, () => {
     console.log('Servidor rodando na porta 3010!')
 })
