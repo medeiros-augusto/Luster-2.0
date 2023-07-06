@@ -183,22 +183,53 @@ app.post('/compra', (req, res) => {
     if (cep.length > 1) {
         if (num.length > 0) {
             if (email.length > 1) {
-                connection.query('SET @valor_consulta := NULL;', (error, results) => {
-                    if (error) throw error;
-
-                    connection.query("SELECT id_usuario INTO @valor_consulta FROM usuario WHERE email_usuario = '" + email + "';", (error, results) => {
-                        if (error) throw error;
-
-                        connection.query("INSERT INTO compra (id_fk_usuario, fk_id_produto, quantidade) VALUES (@valor_consulta, 1, 1);",
-                            function (err, rows, fields) {
-                                if (!err) {
-                                    res.sendFile(path.join(__dirname, 'pages', 'compraconcluida.html'));
-                                } else {
-                                    console.log("Erro: Consulta não realizada", err);
-                                    res.send('Usuário não cadastrado!');
-                                }
+                connection.query("UPDATE `usuario` SET `saldo_usuario` = `saldo_usuario` - 999 WHERE `email_usuario` = '" + email + "';",
+                function(err,rows,fields){
+                    if (!err){
+                        connection.query('SET @valor_consulta := NULL;', (error, results) => {
+                            if (error) throw error;
+        
+                            connection.query("SELECT id_usuario INTO @valor_consulta FROM usuario WHERE email_usuario = '" + email + "';", (error, results) => {
+                                if (error) throw error;
+        
+                                connection.query("INSERT INTO compra (id_fk_usuario, fk_id_produto, quantidade) VALUES (@valor_consulta, 1, 1);",
+                                    function (err, rows, fields) {
+                                        if (!err) {
+                                            connection.query("SELECT saldo_usuario FROM usuario where email_usuario = '" + email + "'", function (error, results, fields) {
+                                                if (error) throw error;
+                                                const saldo = parseFloat(results[0].saldo_usuario);
+                                                const filePaths = ['index.html', 'pages/roleta.html', 'pages/compra.html', 'pages/gosverni.html', 'pages/dropdown.html']
+                
+                                                filePaths.forEach(function (filePath) {
+                                                    fs.readFile(filePath, 'utf8', function (error, data) {
+                                                        if (error) throw error;
+                
+                                                        // Carrega o HTML usando o cheerio
+                                                        const $ = cheerio.load(data);
+                
+                                                        // Encontra a tag <p> com o id "header-saldo" e altera seu conteúdo
+                                                        $('#header-saldo').text(`R$ ${saldo}`);
+                
+                                                        // Obtém o HTML modificado
+                                                        const htmlModificado = $.html();
+                
+                                                        fs.writeFile(filePath, htmlModificado, 'utf8', function (error) {
+                                                            if (error) throw error;
+                                                        });
+                                                    });
+                                                })
+                                                res.sendFile(path.join(__dirname, 'pages', 'compraconcluida.html'));
+                                            });
+                                        } else {
+                                            console.log("Erro: Consulta não realizada", err);
+                                            res.send('Usuário não cadastrado!');
+                                        }
+                                    });
                             });
-                    });
+                        });
+                    }else{
+                        res.send('Compra falhou!')
+                    }
                 });
             } else {
                 res.send("E-mail não possui caracteres suficientes!")
